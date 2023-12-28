@@ -1,0 +1,68 @@
+<div class="center-container">
+    <mat-card class="center-card">
+        <mat-card-title>{{status == 'add' ? 'Add User' : 'Edit User'}}</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="userForm" (ngSubmit)="submit()">
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="First Name" formControlName="firstname">
+                    </mat-form-field>
+                    <span class="p-error block"
+                        *ngIf="f?.['firstname']?.touched && f?.['firstname']?.invalid && f?.['firstname']?.dirty">
+                        <ng-container *ngIf="f?.['firstname']?.errors?.['required']">First name is
+                            required.</ng-container>
+                        <ng-container *ngIf="f?.['firstname']?.errors?.['pattern']">Invalid First
+                            name</ng-container>
+                    </span>
+                </p>
+
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Last Name" formControlName="lastname">
+                    </mat-form-field>
+                    <span class="p-error block"
+                        *ngIf="f?.['lastname']?.touched && f?.['lastname']?.invalid && f?.['lastname']?.dirty">
+                        <ng-container *ngIf="f?.['lastname']?.errors?.['required']">Last name is
+                            required.</ng-container>
+                        <ng-container *ngIf="f?.['lastname']?.errors?.['pattern']">Invalid Last name</ng-container>
+                    </span>
+                </p>
+
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                    <span class="p-error block"
+                        *ngIf="f?.['email']?.touched && f?.['email']?.invalid && f?.['email']?.dirty">
+                        <ng-container *ngIf="f?.['email']?.errors?.['required']">Email is required.</ng-container>
+                        <ng-container
+                            *ngIf="!f?.['email']?.errors?.['required'] && f?.['email']?.errors?.['emailValidator']">Please
+                            enter valid email.</ng-container>
+                    </span>
+                </p>
+
+                <p>
+                    <mat-form-field>
+                        <input type="number" matInput placeholder="Phone Number" formControlName="phonenumber"
+                            inputmode="numeric">
+                    </mat-form-field>
+                    <span class="p-error block"
+                        *ngIf="f?.['phonenumber']?.touched && f?.['phonenumber']?.invalid && f?.['phonenumber']?.dirty">
+                        <ng-container *ngIf="f?.['phonenumber']?.errors?.['required']">Phone number is
+                            required.</ng-container>
+                        <ng-container
+                            *ngIf="!f?.['phonenumber']?.errors?.['required'] && f?.['phonenumber']?.errors?.['phoneNumber']">
+                            Invalid phone number.</ng-container>
+                    </span>
+                </p>
+
+                <div class="bold-button-container">
+                    <button type="submit" [disabled]="!userForm.valid || isFormUnchanged == undefined"
+                        class="bold-button">{{status == 'add' ? 'Add
+                        User' : 'Edit User'}}</button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

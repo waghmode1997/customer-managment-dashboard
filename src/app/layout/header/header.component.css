@@ -1,0 +1,15 @@
+/* .right-corner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: 867%;
+  }
+  
+  .bold-button {
+    font-weight: bold;
+    padding: 10px 20px; 
+  } */
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }

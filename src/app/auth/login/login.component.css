@@ -1,0 +1,57 @@
+/* app.component.scss */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* 100% of the viewport height */
+}
+
+.center-card {
+  /* Add any additional styles for your card here */
+  width: 350px;
+  /* Set your desired width */
+  height: 350px;
+}
+
+.mat-mdc-card-title,
+.mat-mdc-card-subtitle {
+  display: block;
+  margin: 0;
+  TEXT-ALIGN: center;
+  padding: 20px;
+}
+
+.centered-form-field {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-width-form-field {
+  width: 300px;
+}
+
+.mat-mdc-form-field {
+  width: 317px !important;
+}
+
+.centered-button {
+  display: flex;
+  justify-content: center !important;
+}
+
+.bold-button {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+span.p-error {
+  display: block;
+  margin-top: -20px;
+}
+
+span.p-error block {
+  font-size: 12px;
+  color: red;
+}

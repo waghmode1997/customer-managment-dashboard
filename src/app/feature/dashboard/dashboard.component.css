@@ -1,0 +1,50 @@
+.centered-button {
+    display: flex;
+    justify-content: right;
+    margin-top: -2%;
+    margin-right: 5%;
+    margin-bottom: 1%;
+}
+
+.bold-button {
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.mat-mdc-form-field {
+    margin-left: 2%;
+    margin-bottom: -3%;
+    height: 10vh;
+}
+
+.card-header {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.user-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.no-data-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.no-data {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #666;
+}
+
+mat-icon {
+    cursor: pointer;
+}

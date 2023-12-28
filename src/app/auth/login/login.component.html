@@ -1,0 +1,40 @@
+<div class="center-container">
+    <mat-card class="center-card">
+        <mat-card-title>Log In</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="signInForm" (ngSubmit)="submit()">
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                    <span class="p-error block"
+                        *ngIf="f?.['email']?.touched && f?.['email']?.invalid && f?.['email']?.dirty">
+                        <ng-container *ngIf="f?.['email']?.errors?.['required']">Email is required.</ng-container>
+                        <ng-container
+                            *ngIf="!f?.['email']?.errors?.['required'] && f?.['email']?.errors?.['emailValidator']">Please
+                            enter valid email.</ng-container>
+                    </span>
+                </p>
+
+                <p>
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                    <span class="p-error block"
+                        *ngIf="f?.['password']?.touched && f?.['password']?.invalid && f?.['password']?.dirty">
+                        <ng-container *ngIf="f?.['password']?.errors?.['minLength']">Password should be at least 6
+                            characters long.</ng-container>
+                        <ng-container *ngIf="f?.['password']?.errors?.['required']">Password is required.</ng-container>
+
+                    </span>
+                </p>
+
+
+                <div class="centered-button">
+                    <button type="submit" class="bold-button" [disabled]="!signInForm.valid">Sign In</button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
